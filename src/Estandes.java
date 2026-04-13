@@ -1,0 +1,41 @@
+/***********************************************************************************
+ * Universidade Católica de Brasília - UCB                                         *
+ * Disciplina: Programação Orientada a Objetos                                     *
+ * Aluno: Jackson Junio Xavier Franco                                              *
+ * Data: 13/04/2026                                                                *
+ *                                                                                 *
+ * Descrição:                                                                      *
+ * Classe principal do sistema de locação de livros                                *
+ * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ ***********************************************************************************/
+
+public class Estandes {
+        private int id;
+        private String categoria;
+        private boolean disponivel;
+
+        public Estandes(int id, String categoria) {
+            this.id = id;
+            this.categoria = categoria;
+            this.disponivel = true;
+        }
+        public int getId() {
+            return id;
+        }
+
+        public String getCategoria() {
+            return categoria;
+        }
+
+        public boolean isDisponivel() {
+            return disponivel;
+        }
+
+        public void setDisponivel(boolean disponivel) {
+            this.disponivel = disponivel;
+        }
+
+        public String toString() {
+            return "ID: " + id + " | Categoria: " + categoria + " | Disponível: " + disponivel;
+        }
+    }

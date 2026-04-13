@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+/***********************************************************************************
+ * Universidade Católica de Brasília - UCB                                         *
+ * Disciplina: Programação Orientada a Objetos                                     *
+ * Aluno: Jackson Junio Xavier Franco                                              *
+ * Data: 13/04/2026                                                                *
+ *                                                                                 *
+ * Descrição:                                                                      *
+ * Classe principal do sistema de locação de livros                                *
+ * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ ***********************************************************************************/
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        AcoesMenu acoesMenu = new AcoesMenu();
+        Biblioteca biblioteca = new Biblioteca();
+
+        int opcao;
+
+        do {
+
+            acoesMenu.MenuPrincipal();
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    acoesMenu.cadastrarLivro(sc, biblioteca);
+                    break;
+
+                case 2:
+                    acoesMenu.cadastrarCliente(sc, biblioteca);
+                    break;
+
+                case 3:
+                    acoesMenu.emprestarLivro(sc, biblioteca);
+                    break;
+
+                case 4:
+                    acoesMenu.devolverLivro(sc, biblioteca);
+                    break;
+
+                case 5:
+                    biblioteca.listarLivros();
+                    break;
+
+                case 6:
+                    biblioteca.listarEmprestimos();
+                    break;
+            }
+
+        } while (opcao != 0);
+
+        sc.close();
+    }
+};
