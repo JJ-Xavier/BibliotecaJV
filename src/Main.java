@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /***********************************************************************************
- * Universidade Católica de Brasília - UCB                                         *
+ * Universidade Catolica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
  * Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *

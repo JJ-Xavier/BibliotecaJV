@@ -5,8 +5,8 @@
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe principal do sistema de locação de livros                                *
- * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ * Classe base que serve como mãe para as demais classes                           *
+ * Contém atributos e métodos comuns a todos                                       *
  ***********************************************************************************/
 
 public class Estandes {

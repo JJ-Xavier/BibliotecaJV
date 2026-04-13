@@ -7,8 +7,8 @@ import java.util.ArrayList;
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe principal do sistema de locação de livros                                *
- * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ * Classe responsável pelo controle do sistema da locadora.                        *
+ * Gerencia Livros, Usuarios e Emprestimos.                                        *
  ***********************************************************************************/
 
 public class Biblioteca {

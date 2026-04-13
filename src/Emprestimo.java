@@ -5,8 +5,8 @@
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe principal do sistema de locação de livros                                *
- * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ * Classe responsável por representar o relacionamento entre Usuario e livro       *
+ * Adiciona relacionamento                                                         *
  ***********************************************************************************/
 
 public class Emprestimo {

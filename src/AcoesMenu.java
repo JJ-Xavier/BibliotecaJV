@@ -7,8 +7,8 @@ import java.util.Scanner;
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe principal do sistema de locação de livros                                *
- * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ * Classe de ações do menu principal.                                              *
+ * Responsável pelas ações do menu e uso da classe controler locadora.             *
  ***********************************************************************************/
 
 public class AcoesMenu {

@@ -5,8 +5,8 @@
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe principal do sistema de locação de livros                                *
- * Responsável pela execução do programa e interação com o usuário via terminal.   *
+ * Classe que representa um Usuario da Biblioteca.                                 *
+ * Armazena informações básicas como identificação e nome.                         *
  ***********************************************************************************/
 
 public class Cliente {
