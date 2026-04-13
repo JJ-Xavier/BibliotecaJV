@@ -12,58 +12,55 @@ import java.util.Scanner;
  ***********************************************************************************/
 
 public class AcoesMenu {
-    public AcoesMenu() {
-    }
-    public void MenuPrincipal(){
+    public void MenuPrincipal() {
         System.out.println("\n1 - Cadastrar Livro");
-        System.out.println("2 - Cadastrar cliente");
-        System.out.println("3 - Alugar Livro");
+        System.out.println("2 - Cadastrar Usuário");
+        System.out.println("3 - Emprestar Livro");
         System.out.println("4 - Devolver Livro");
         System.out.println("5 - Listar todos os Livros");
-        System.out.println("6 - Listar Emprestimos dos Livros");
+        System.out.println("6 - Listar Empréstimos");
         System.out.println("0 - Sair");
     }
 
-    public void cadastrarLivro(Scanner sc, Biblioteca biblioteca){
+    public void cadastrarLivro(Scanner sc, Biblioteca biblioteca) {
         System.out.print("ID: ");
-        int idV = sc.nextInt();
+        int id = sc.nextInt();
         sc.nextLine();
-
         System.out.print("Categoria: ");
         String categoria = sc.nextLine();
-
         System.out.print("Título: ");
         String titulo = sc.nextLine();
-
-        biblioteca.adicionarLivro(new Livro(idV, categoria, titulo));
+        biblioteca.adicionarLivro(new Livro(id, categoria, titulo));
     }
 
-    public void cadastrarCliente(Scanner sc, Biblioteca biblioteca){
+    public void cadastrarUsuario(Scanner sc, Biblioteca biblioteca) {
         System.out.print("ID: ");
-        int idC = sc.nextInt();
-
+        int id = sc.nextInt();
         sc.nextLine();
-
         System.out.print("Nome: ");
         String nome = sc.nextLine();
+        System.out.print("Tipo (1 para Aluno / 2 para Professor): ");
+        int tipo = sc.nextInt();
 
-        biblioteca.adicionarCliente(new Cliente(idC, nome));
+        if (tipo == 1) {
+            biblioteca.adicionarUsuario(new Aluno(id, nome));
+        } else {
+            biblioteca.adicionarUsuario(new Professor(id, nome));
+        }
+        System.out.println("Usuário cadastrado com sucesso!");
     }
 
-    public void emprestarLivro(Scanner sc, Biblioteca biblioteca){
-        System.out.print("ID: ");
+    public void emprestarLivro(Scanner sc, Biblioteca biblioteca) {
+        System.out.print("ID do Livro: ");
         int vId = sc.nextInt();
-
-        System.out.print("ID cliente: ");
+        System.out.print("ID do Usuário: ");
         int cId = sc.nextInt();
-
         biblioteca.emprestarLivro(vId, cId);
     }
 
-    public void devolverLivro(Scanner sc, Biblioteca biblioteca){
+    public void devolverLivro(Scanner sc, Biblioteca biblioteca) {
         System.out.print("ID do livro: ");
         int devId = sc.nextInt();
-
         biblioteca.devolverLivro(devId);
     }
 }

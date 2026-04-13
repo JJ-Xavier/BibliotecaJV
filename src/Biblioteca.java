@@ -12,75 +12,58 @@ import java.util.ArrayList;
  ***********************************************************************************/
 
 public class Biblioteca {
-
     private ArrayList<Livro> livros = new ArrayList<>();
-    private ArrayList<Cliente> clientes = new ArrayList<>();
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
     private ArrayList<Emprestimo> emprestimos = new ArrayList<>();
 
-    public void adicionarLivro(Livro l) {
-        livros.add(l);
-    }
-
-    public void adicionarCliente(Cliente c) {
-        clientes.add(c);
-    }
+    public void adicionarLivro(Livro l) { livros.add(l); }
+    public void adicionarUsuario(Usuario u) { usuarios.add(u); }
 
     public Livro buscarLivro(int id) {
-        for (Livro l : livros) {
-            if (l.getId() == id) {
-                return l;
-            }
-        }
+        for (Livro l : livros) { if (l.getId() == id) return l; }
         return null;
     }
 
-    public Cliente buscarCliente(int id) {
-        for (Cliente c : clientes) {
-            if (c.getId() == id) {
-                return c;
-            }
-        }
+    public Usuario buscarUsuario(int id) {
+        for (Usuario u : usuarios) { if (u.getId() == id) return u; }
         return null;
     }
 
-    public void emprestarLivro(int idLivro, int idCliente) {
+    public void emprestarLivro(int idLivro, int idUsuario) {
         Livro l = buscarLivro(idLivro);
-        Cliente c = buscarCliente(idCliente);
+        Usuario u = buscarUsuario(idUsuario);
 
-        if (l != null && c != null) {
+        if (l != null && u != null) {
             if (l.isDisponivel()) {
-                l.setDisponivel(false);
-                emprestimos.add(new Emprestimo(l, c));
-                System.out.println("Emprestimo realizado com sucesso!");
-            } else {
-                System.out.println("Emprestimo indisponível.");
-            }
-        } else {
-            System.out.println("Cliente ou Livro não encontrado.");
-        }
+                if (u.podePegarMaisLivro()) {
+                    l.setDisponivel(false);
+                    u.adicionarLivroLista(l);
+                    emprestimos.add(new Emprestimo(l, u));
+                    System.out.println("Empréstimo realizado com sucesso!");
+                } else {
+                    System.out.println("Limite atingido! Alunos max 3, Profs max 5.");
+                }
+            } else { System.out.println("Livro indisponível."); }
+        } else { System.out.println("Usuário ou Livro não encontrado."); }
     }
 
     public void devolverLivro(int idLivro) {
         for (Emprestimo e : emprestimos) {
             if (e.getLivro().getId() == idLivro) {
                 e.getLivro().setDisponivel(true);
+                e.getUsuario().removerLivroLista(e.getLivro());
                 emprestimos.remove(e);
                 System.out.println("Livro devolvido!");
                 return;
             }
         }
-        System.out.println("Emprestimo não encontrado.");
+        System.out.println("Empréstimo não encontrado.");
     }
 
     public void listarLivros() {
-        for (Livro l : livros) {
-            System.out.println(l);
-        }
+        for (Livro l : livros) System.out.println(l);
     }
-
     public void listarEmprestimos() {
-        for (Emprestimo e : emprestimos) {
-            System.out.println(e);
-        }
+        for (Emprestimo e : emprestimos) System.out.println(e);
     }
 }

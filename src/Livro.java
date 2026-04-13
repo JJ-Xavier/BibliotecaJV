@@ -10,18 +10,18 @@
  ***********************************************************************************/
 
 public class Livro extends Estandes {
-        private String titulo;
+    private String titulo;
 
-        public Livro(int id, String categoria, String titulo) {
-            super(id, categoria);
-            this.titulo = titulo;
-        }
+    public Livro(int id, String categoria, String titulo) {
+        super(id, categoria);
+        this.titulo = titulo;
+    }
 
     public String getTitulo() {
         return titulo;
     }
 
     public String toString() {
-            return super.toString() + " | Titulos: " + titulo;
-        }
+        return super.toString() + " | Título: " + titulo;
+    }
 }

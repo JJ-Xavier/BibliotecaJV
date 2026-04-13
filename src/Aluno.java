@@ -5,27 +5,12 @@
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe responsável por representar o relacionamento entre Usuario e livro       *
- * Adiciona relacionamento                                                         *
+ * Classe filha dos Usuarios                                                       *
+ * Serve para limitar o limite de livros dos alunos                                *
  ***********************************************************************************/
 
-public class Emprestimo {
-    private Livro livro;
-    private Usuario usuario;
-
-    public Emprestimo(Livro livro, Usuario usuario) {
-        this.livro = livro;
-        this.usuario = usuario;
-    }
-
-    public Livro getLivro() {
-        return livro;
-    }
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public String toString() {
-        return "Livro: " + livro.getTitulo() + " | Usuário: " + usuario.getNome();
+public class Aluno extends Usuario {
+    public Aluno(int id, String nome) {
+        super(id, nome, 3); // limiteLivros: 3
     }
 }
