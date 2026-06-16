@@ -1,17 +1,19 @@
 package Repository;
 
-import Model.Livro;
 import DataBase.DataBaseConnection;
+import Model.Livro;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LivroRepositorySQLite implements LivroRepository {
+public class LivroRepositorySQLite
+        implements LivroRepository {
 
     private Connection connection;
 
     public LivroRepositorySQLite() {
+
         connection = DataBaseConnection
                 .getInstance()
                 .getConnection();
@@ -21,7 +23,7 @@ public class LivroRepositorySQLite implements LivroRepository {
     public void salvar(Livro livro) {
 
         String sql =
-                "INSERT INTO livro(id, categoria, titulo, disponivel) VALUES (?, ?, ?, ?)";
+                "INSERT INTO livro(id,categoria,titulo,disponivel) VALUES(?,?,?,?)";
 
         try (PreparedStatement stmt =
                      connection.prepareStatement(sql)) {
@@ -42,7 +44,7 @@ public class LivroRepositorySQLite implements LivroRepository {
     public Livro buscarPorId(int id) {
 
         String sql =
-                "SELECT * FROM livro WHERE id = ?";
+                "SELECT * FROM livro WHERE id=?";
 
         try (PreparedStatement stmt =
                      connection.prepareStatement(sql)) {
@@ -111,7 +113,7 @@ public class LivroRepositorySQLite implements LivroRepository {
     public void atualizar(Livro livro) {
 
         String sql =
-                "UPDATE livro SET disponivel = ? WHERE id = ?";
+                "UPDATE livro SET disponivel=? WHERE id=?";
 
         try (PreparedStatement stmt =
                      connection.prepareStatement(sql)) {
@@ -137,7 +139,7 @@ public class LivroRepositorySQLite implements LivroRepository {
     public void remover(int id) {
 
         String sql =
-                "DELETE FROM livro WHERE id = ?";
+                "DELETE FROM livro WHERE id=?";
 
         try (PreparedStatement stmt =
                      connection.prepareStatement(sql)) {

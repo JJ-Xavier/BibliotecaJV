@@ -37,6 +37,7 @@ public class Biblioteca {
         }
 
         livroRepository.salvar(livro);
+
         System.out.println("Livro cadastrado com sucesso.");
     }
 
@@ -56,6 +57,7 @@ public class Biblioteca {
         }
 
         usuarioRepository.salvar(usuario);
+
         System.out.println("Usuário cadastrado com sucesso.");
     }
 
@@ -94,6 +96,7 @@ public class Biblioteca {
         }
 
         livro.setDisponivel(false);
+
         livroRepository.atualizar(livro);
 
         usuario.adicionarLivroLista(livro);
@@ -139,8 +142,8 @@ public class Biblioteca {
             return;
         }
 
-        for (Emprestimo e : emprestimos) {
-            System.out.println(e);
+        for (Emprestimo emprestimo : emprestimos) {
+            System.out.println(emprestimo);
         }
     }
 }

@@ -10,7 +10,7 @@ public class DataBaseConnection {
 
     private Connection connection;
 
-    private DatabaseConnection() {
+    private DataBaseConnection() {
 
         try {
 
