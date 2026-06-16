@@ -1,7 +1,9 @@
+package Model;
+
 /***********************************************************************************
  * Universidade Católica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
- * Aluno: Jackson Junio Xavier Franco                                              *
+ * Model.Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *

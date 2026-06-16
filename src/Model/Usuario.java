@@ -1,13 +1,15 @@
+package Model;
+
 import java.util.ArrayList;
 
 /***********************************************************************************
  * Universidade Católica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
- * Aluno: Jackson Junio Xavier Franco                                              *
+ * Model.Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe que representa um Usuario da Biblioteca.                                 *
+ * Classe que representa um Model.Usuario da Service.Biblioteca.                                 *
  * Armazena informações básicas como identificação e nome.                         *
  ***********************************************************************************/
 

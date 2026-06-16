@@ -1,9 +1,11 @@
+package Model;
+
 import java.util.Scanner;
 
 /***********************************************************************************
  * Universidade Católica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
- * Aluno: Jackson Junio Xavier Franco                                              *
+ * Model.Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
@@ -13,10 +15,10 @@ import java.util.Scanner;
 
 public class AcoesMenu {
     public void MenuPrincipal() {
-        System.out.println("\n1 - Cadastrar Livro");
+        System.out.println("\n1 - Cadastrar Model.Livro");
         System.out.println("2 - Cadastrar Usuário");
-        System.out.println("3 - Emprestar Livro");
-        System.out.println("4 - Devolver Livro");
+        System.out.println("3 - Emprestar Model.Livro");
+        System.out.println("4 - Devolver Model.Livro");
         System.out.println("5 - Listar todos os Livros");
         System.out.println("6 - Listar Empréstimos");
         System.out.println("0 - Sair");
@@ -39,7 +41,7 @@ public class AcoesMenu {
         sc.nextLine();
         System.out.print("Nome: ");
         String nome = sc.nextLine();
-        System.out.print("Tipo (1 para Aluno / 2 para Professor): ");
+        System.out.print("Tipo (1 para Model.Aluno / 2 para Model.Professor): ");
         int tipo = sc.nextInt();
 
         if (tipo == 1) {
@@ -51,7 +53,7 @@ public class AcoesMenu {
     }
 
     public void emprestarLivro(Scanner sc, Biblioteca biblioteca) {
-        System.out.print("ID do Livro: ");
+        System.out.print("ID do Model.Livro: ");
         int vId = sc.nextInt();
         System.out.print("ID do Usuário: ");
         int cId = sc.nextInt();

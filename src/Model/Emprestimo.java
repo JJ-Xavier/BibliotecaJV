@@ -1,11 +1,13 @@
+package Model;
+
 /***********************************************************************************
  * Universidade Católica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
- * Aluno: Jackson Junio Xavier Franco                                              *
+ * Model.Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
- * Classe responsável por representar o relacionamento entre Usuario e livro       *
+ * Classe responsável por representar o relacionamento entre Model.Usuario e livro       *
  * Adiciona relacionamento                                                         *
  ***********************************************************************************/
 
@@ -26,6 +28,6 @@ public class Emprestimo {
     }
 
     public String toString() {
-        return "Livro: " + livro.getTitulo() + " | Usuário: " + usuario.getNome();
+        return "Model.Livro: " + livro.getTitulo() + " | Usuário: " + usuario.getNome();
     }
 }

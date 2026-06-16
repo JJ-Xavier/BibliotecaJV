@@ -1,17 +1,18 @@
+import Model.AcoesMenu;
+import Service.Biblioteca;
+
 import java.util.Scanner;
 
 /***********************************************************************************
  * Universidade Catolica de Brasília - UCB                                         *
  * Disciplina: Programação Orientada a Objetos                                     *
- * Aluno: Jackson Junio Xavier Franco                                              *
+ * Model.Aluno: Jackson Junio Xavier Franco                                              *
  * Data: 13/04/2026                                                                *
  *                                                                                 *
  * Descrição:                                                                      *
  * Classe principal do sistema de locação de livros                                *
  * Responsável pela execução do programa e interação com o usuário via terminal.   *
  ***********************************************************************************/
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
